@@ -1,8 +1,8 @@
 <?php
 
-namespace Ab;
+namespace joseluisald\Ab;
 
-use \Ab\Ab;
+use \joseluisald\Ab\Ab;
 use ArrayAccess;
 use Countable;
 use IteratorAggregate;
