@@ -1,0 +1,19 @@
+{
+    "name": "joseluisald/ab",
+    "description": "Uma biblioteca para executar testes AB dentro do seu codigo.",
+    "keywords": ["ab", "test ab"],
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "José Luis",
+            "email": "joseluis.ald@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ab\\": "src"
+        }
+    }
+}
