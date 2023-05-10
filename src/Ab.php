@@ -1,6 +1,6 @@
 <?php
 
-namespace joseluisald\Ab;
+namespace Joseluisald\Ab;
 
 use Countable;
 use InvalidArgumentException;
