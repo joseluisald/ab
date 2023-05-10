@@ -2,7 +2,7 @@
 
 namespace joseluisald\Ab;
 
-use \joseluisald\Ab\Ab;
+use joseluisald\Ab\Ab;
 use ArrayAccess;
 use Countable;
 use IteratorAggregate;

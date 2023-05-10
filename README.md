@@ -27,9 +27,9 @@ definir o nome do teste e as variações, com suas respectivas
 probabilidade absoluta:
 
 ``` php
-use Namshi\AB\Test;
+use joseluisald\Ab\Ab;
 
-$homepageColorTest = new Test('homepage_color', array(
+$homepageColorTest = new Ab('homepage_color', array(
     'blue' => 1,
     'red' => 1,
 ));
@@ -58,19 +58,19 @@ você pode cadastrar quantos testes quiser,
 e recupere-os facilmente:
 
 ``` php
-use Namshi\AB\Container;
-use Namshi\AB\Test;
+use joseluisald\Ab\Container;
+use joseluisald\Ab\Ab;
 
 // instanciar o container com um teste
 $container = new Container(array(
-    new Test('homepage_color', array(
+    new Ab('homepage_color', array(
         'blue'  => 1,
         'black' => 2,
     )),
 ));
 
 // adicionar outro teste
-$container->add(new Test('checkout_button_text', array(
+$container->add(new Ab('checkout_button_text', array(
     'Buy now'               => 4,
     'Go to checkout'        => 1,
     'Proceed to checkout'   => 1,
@@ -108,13 +108,13 @@ porcentagem de picking de cada variação é de 25% (A), 50% (B) e
 As variações podem ser definidas durante a construção do teste ou posteriormente:
 
 ``` php
-$test = new Test('checkout_button_text', array(
+$test = new Ab('checkout_button_text', array(
     'Buy now!'          => 1,
     'Go to checkout!'   => 1,
 ));
 
 // ou você pode configurá-los depois
-$test = new Test('checkout_button_text');
+$test = new Ab('checkout_button_text');
 
 $test->setVariations(array(
     'Buy now!'          => 1,
@@ -126,7 +126,7 @@ Lembre-se de definir as variações antes de executar o teste
 com `getVariation`, senão uma exceção é lançada:
 
 ``` php
-$test = new Test('checkout_button_text');
+$test = new Ab('checkout_button_text');
 
 $test->getVariation(); // lançará um BadMethodCallException
 ```
@@ -146,7 +146,7 @@ usuário específico sempre obterá as mesmas variações do
 testes:
 
 ``` php
-$test = new Test('homepage_color', array(
+$test = new Ab('homepage_color', array(
     'white' => 1,
     'black' => 1,
 ));
@@ -167,7 +167,7 @@ Você não deve especificar uma semente diferente para cada um de seus
 testes, mas use o contêiner:
 
 ``` php
-$container = new Container(new Test('homepage_color', array(
+$container = new Container(new Ab('homepage_color', array(
     'black' => 1,
     'white' => 1,
 )));
@@ -186,7 +186,7 @@ atribuirá uma semente única a cada teste.
 por exemplo, se o agente do usuário que está visitando a página for um bot.
 
 ``` php
-$test = new Test('my_ab_test', array(
+$test = new Ab('my_ab_test', array(
     'a' => 0,
     'b' => 1,
 ));
@@ -207,7 +207,7 @@ um teste apenas injetando-os (ou com o `set`
 método):
 
 ``` php
-$test = new Test('example', array(1, 2), array(
+$test = new Ab('example', array(1, 2), array(
     'par1' => 1,
     'par2' => new stdClass,
 ));
